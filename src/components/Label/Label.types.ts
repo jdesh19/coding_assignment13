@@ -1,5 +1,4 @@
 export interface LabelProps {
-    text: string;
-    htmlFor?: string;
-  }
-  
+  text: string;
+  htmlFor?: string;
+}

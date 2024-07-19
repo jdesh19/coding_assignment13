@@ -25,12 +25,12 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 8018",
     "build-storybook": "storybook build",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"[Husky] pre-commit\""
+      "pre-commit": "prettier --write . && git add -A ."
     }
   },
   "eslintConfig": {

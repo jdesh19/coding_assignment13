@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export interface RadioButtonProps {
   label: string;
@@ -20,12 +20,19 @@ const StyledInput = styled.input`
   margin-right: 10px;
 `;
 
-const StyledLabel = styled.label<Pick<RadioButtonProps, 'disabled'>>`
-  color: ${props => (props.disabled ? '#aaa' : '#333')};
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+const StyledLabel = styled.label<Pick<RadioButtonProps, "disabled">>`
+  color: ${(props) => (props.disabled ? "#aaa" : "#333")};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 `;
 
-const RadioButton: React.FC<RadioButtonProps> = ({ label, name, value, checked = false, disabled = false, onChange }) => (
+const RadioButton: React.FC<RadioButtonProps> = ({
+  label,
+  name,
+  value,
+  checked = false,
+  disabled = false,
+  onChange,
+}) => (
   <Wrapper>
     <StyledInput
       type="radio"
@@ -35,9 +42,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({ label, name, value, checked =
       disabled={disabled}
       onChange={onChange}
     />
-    <StyledLabel disabled={disabled}>
-      {label}
-    </StyledLabel>
+    <StyledLabel disabled={disabled}>{label}</StyledLabel>
   </Wrapper>
 );
 
