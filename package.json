@@ -29,7 +29,7 @@
     "format": "eslint --fix .",
     "prettier:write": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "husky": {
     "hooks": {
@@ -37,13 +37,14 @@
     }
   },
   "lint-staged": {
-  "*": [
-    "eslint --fix",
-    "prettier --write"
-  ]
-},
-
-
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
